@@ -66,7 +66,8 @@ header{
   position: fixed;
   z-index: 100;
   top:0;
-  width: 100%;
+  width: 100dvw;
+  /* overflow: visible; */
 }
 
 .topHeader{
@@ -158,6 +159,9 @@ nav{
     border: none;
     outline: none;
     color: white;
+    &::placeholder{
+      color: white;
+    }
   }
   & a{
     display: inline-block;
@@ -171,7 +175,7 @@ nav{
 }
 
 .banner{
-  height: 700px;
+  height: 81dvh;
   /* position: relative; */
   margin-top: 100px;
 }
@@ -223,11 +227,16 @@ nav{
   background-color: var(--bluegreen);
   display: flex;
   justify-content: space-evenly;
+  /* position: relative; */
 }
 
 .footerItem{
-  padding: 20px 0;
+  padding: 30px 60px;
   position: relative;
+  display: flex;
+  width: 280px;
+  align-items: center;
+  /* border-right: 2px solid white; */
   & img{
     display: inline-block;
     width: 40px;
@@ -235,23 +244,24 @@ nav{
   & p{
     display: inline-block;
     padding-left: 10px;
-    padding-right: 50px;
     color: white;
   }
 
-  & p::after{
+  &::after{
+    display:  block;
     content: "";
     background-color: white;
-    width: 80px;
+    width: 90px;
     height: 2px;
     transform: rotate(90deg);
     position: absolute;
-    right: -50px;
+    bottom: 45px;
+    right: -35px;
   }
 }
 
 .footerItem:last-child{
-  & p::after{
+  &::after{
     content: none;
   }
 }
