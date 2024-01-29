@@ -1,0 +1,257 @@
+@font-face{
+  font-family: SpaceGrotesk-Bold;
+  src: url(fonts/SpaceGrotesk-Bold.ttf);
+}
+@font-face{
+  font-family: SpaceGrotesk-Light;
+  src: url(fonts/SpaceGrotesk-Light.ttf);
+}
+@font-face{
+  font-family: SpaceGrotesk-Medium;
+  src: url(fonts/SpaceGrotesk-Medium.ttf);
+}
+@font-face{
+  font-family: SpaceGrotesk-Regular;
+  src: url(fonts/SpaceGrotesk-Regular.ttf);
+}
+@font-face{
+  font-family: SpaceGrotesk-SemiBold;
+  src: url(fonts/SpaceGrotesk-SemiBold.ttf);
+}
+
+:root{
+  --bluegreen: rgb(5, 73, 78);
+  --lightaccent: rgb(175, 172, 172);
+  --brown: rgb(165, 89, 35);
+  --whiteTrans: rgba(255, 255, 255, 0.2);
+  --cover: rgba(26, 26, 26, 0.56);
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: SpaceGrotesk-SemiBold;
+  list-style: none;
+  text-decoration: none;
+}
+.container{
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.flexSpabet{
+  display: flex;
+  justify-content: space-between;
+}
+.flexStart{
+  display: flex;
+  justify-content: flex-start;
+}
+.flexSpaceEvenly{
+  display: flex;
+  justify-content: space-evenly;
+}
+.col{
+  flex-direction: column;
+}
+
+.inBlock{
+  display: inline-block;
+}
+
+header{
+  position: fixed;
+  z-index: 100;
+  top:0;
+  width: 100%;
+}
+
+.topHeader{
+  background-color: var(--bluegreen)
+}
+.topHeader ul li{
+  display: inline-block;
+  color: white;
+}
+.topHeader ul li a{
+  display: flex;
+  color: white;
+  padding: 15px 10px;
+  & img{
+    padding-right: 5px;
+  }
+}
+.topHeader ul li:first-child a{
+  padding-left: 0;
+}
+.topHeader ul li:last-child a{
+  padding-right: 0;
+}
+.midHeader{
+  background-color: white;
+}
+#time{
+  border-left: 1px var(--lightaccent) solid;
+}
+
+#linkedin{
+  border-left: 1px var(--lightaccent) solid;
+  border-right: 1px var(--lightaccent) solid;
+}
+#youtube{
+  border-right: 1px var(--lightaccent) solid;
+}
+
+.left, .right{
+  padding: 10px 0;
+  & img{
+    height: 40px;
+  }
+}
+.right{
+  & img{
+    display: inline-block;
+    height: 30px;
+    padding-left: 20px;
+
+  }
+  & ul{
+    display: inline-block;
+    padding-left: 10px;
+  } 
+  & li{
+    color: gray;
+  }
+  & a{
+    color: black;
+  }
+}
+nav{
+  background-color: var(--brown);
+}
+
+.navLeft{
+  padding: 0;
+  & li{
+    display: inline-block;
+    /* width: 100px; */
+  }
+  & a{
+    display: inline-block;
+    color: white;
+    padding: 20px 10px;
+  }
+}
+
+.navRight{
+  padding:0;
+  position: relative;
+  padding: 10px;
+  & input{
+    padding: 10px 10px;
+    height: 100%;
+    overflow: scroll;
+    background-color: var(--whiteTrans);
+    border: none;
+    outline: none;
+    color: white;
+  }
+  & a{
+    display: inline-block;
+    background-color: var(--whiteTrans);
+    padding: 10px 5px 5px 0;
+  }
+}
+
+.herobg{
+  background: linear-gradient(var(--cover), var(--cover)), url(Images/banner.jpg) no-repeat center/cover;
+}
+
+.banner{
+  height: 700px;
+  /* position: relative; */
+  margin-top: 100px;
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0,-50%);
+  max-width: 700px;
+}
+.content h1, .content p{
+  color: white;
+}
+
+.content h1{
+  font-size: 60px;
+  font-family: SpaceGrotesk-Bold;
+}
+
+.con{
+  height: 100%;
+}
+
+.conLinks{
+  width: 380px;
+  padding-top: 30px;
+  & a{
+    color: white;
+    padding: 20px 0;
+  }
+}
+#viewServices{
+  display: inline-block;
+  padding: 20px 25px;
+  background-color: white;
+  color: var(--brown);
+  /* margin-top: 20px; */
+}
+
+#play{
+  background-color: var(--brown);
+  padding: 20px;
+  border-radius: 50%;
+  height: 61px;
+  width: 61px;
+}
+
+.footerCon{
+  background-color: var(--bluegreen);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footerItem{
+  padding: 20px 0;
+  position: relative;
+  & img{
+    display: inline-block;
+    width: 40px;
+  }
+  & p{
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 50px;
+    color: white;
+  }
+
+  & p::after{
+    content: "";
+    background-color: white;
+    width: 80px;
+    height: 2px;
+    transform: rotate(90deg);
+    position: absolute;
+    right: -50px;
+  }
+}
+
+.footerItem:last-child{
+  & p::after{
+    content: none;
+  }
+}
