@@ -35,6 +35,9 @@
   list-style: none;
   text-decoration: none;
 }
+body{
+  overflow-x: hidden;
+}
 .container{
   width: 1200px;
   margin: 0 auto;
