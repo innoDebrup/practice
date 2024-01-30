@@ -27,7 +27,6 @@
   --cover: rgba(26, 26, 26, 0.56);
 }
 
-
 *{
   margin: 0;
   padding: 0;
@@ -71,18 +70,21 @@ header{
 }
 
 .topHeader{
-  background-color: var(--bluegreen)
+  background-color: var(--bluegreen);
+  overflow: hidden;
+  /* width: 100dvw; */
 }
 .topHeader ul li{
   display: inline-block;
   color: white;
 }
 .topHeader ul li a{
-  display: flex;
+  display: inline-block;
   color: white;
   padding: 15px 10px;
   & img{
     padding-right: 5px;
+    vertical-align: middle;
   }
 }
 .topHeader ul li:first-child a{
@@ -151,6 +153,9 @@ nav{
   padding:0;
   position: relative;
   padding: 10px;
+  & form{
+    display: inline-block;
+  }
   & input{
     padding: 10px 10px;
     height: 100%;
@@ -170,12 +175,17 @@ nav{
   }
 }
 
+#navLinks,#search,.right{
+  display: block;
+}
+
 .herobg{
   background: linear-gradient(var(--cover), var(--cover)), url(Images/banner.jpg) no-repeat center/cover;
 }
 
 .banner{
-  height: 81dvh;
+  /* width: 100dvw; */
+  height: 90dvh;
   /* position: relative; */
   margin-top: 100px;
 }
@@ -191,7 +201,7 @@ nav{
 }
 
 .content h1{
-  font-size: 60px;
+  font-size: clamp(20px, 60px, 80px);
   font-family: SpaceGrotesk-Bold;
 }
 
@@ -227,6 +237,9 @@ nav{
   background-color: var(--bluegreen);
   display: flex;
   justify-content: space-evenly;
+  width: 100dvw;
+  /* flex-wrap: wrap; */
+  overflow: visible;
   /* position: relative; */
 }
 
@@ -234,7 +247,7 @@ nav{
   padding: 30px 60px;
   position: relative;
   display: flex;
-  width: 280px;
+  /* width: 276px; */
   align-items: center;
   /* border-right: 2px solid white; */
   & img{
@@ -263,5 +276,184 @@ nav{
 .footerItem:last-child{
   &::after{
     content: none;
+  }
+}
+
+#cross,#ham{
+  display: none;
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  font-size: 2rem;
+  background-color: var(--brown);
+  cursor: pointer;
+}
+.rbtn{
+  width: 100dvw;
+  height: 4rem;
+  display: none;
+}
+
+#caret{
+  display: none;
+  color: white;
+  font-size: 2rem;
+}
+
+#cup{
+  display: none;
+}
+
+@media (max-width: 1300px){
+  .container{
+    width: 90dvw;
+  }
+  .footerCon{
+    flex-direction: column;
+    align-items: center;
+  }
+  .footerItem::after{
+    transform: rotate(0deg);
+    width: 80dvw;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 1060px){
+  .topHeader{
+    & .flexSpabet{
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .rHeadUpper{
+    width: 500px;
+    border-bottom: 1px solid var(--lightaccent);
+  }
+  .rHeadLower{
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+  }
+  #linkedin, #youtube{
+    border: none;
+  }
+
+}
+
+@media (max-width: 809px){
+  .midHeader{
+    & .flexSpabet{
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .right{
+    display: none;
+  }
+  nav .container > .flexSpabet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #navLinks ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .navRight{
+    width: 80dvw;
+    & form{
+      width: 80%;
+      & input{
+        width: 100%;
+      }
+    }
+    & a{
+      width: 20%;
+    }
+  }
+  .rbtn{
+    display: block;
+  }
+  #ham{
+    display: block;
+  }
+
+  #navLinks, #search{
+    display: none;
+  }
+}
+
+@media (max-width: 520px){
+  .content{
+    width: 100%;
+  }
+  .conLinks{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  #viewServices{
+    width: 90%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .rHeadUpper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: none; */
+  }
+  .rHeadLower{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  #facebook{
+    padding: 20px 10px;
+  }
+  #twitter{
+    padding: 20px 10px;
+  }
+  #time{
+    border: none;
+    padding-left: 0;
+  }
+
+  .topHeader{
+    height: 140px;
+  }
+
+  #caret{
+    display: block;
+    cursor: pointer;
+  }
+}
+
+
+@media (max-width: 809px) and (min-height: 300px){
+  .banner{
+    margin-top: 40dvh;
+  }
+}
+@media (max-width: 809px) and (min-height: 769px){
+  .banner{
+    margin-top: 30dvh;
+  }
+}
+@media (max-width: 809px) and (min-height: 900px){
+  .banner{
+    margin-top: 20dvh;
+  }
+}
+
+@media (min-height: 983px){
+  .banner{
+    margin-top: 0;
   }
 }
